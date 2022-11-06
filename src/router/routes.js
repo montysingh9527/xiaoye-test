@@ -8,6 +8,14 @@ const routes = [
     ]
   },
   {
+    path: '/css',
+    name:"css",
+    component: () => import('src/pages/css/index.vue'),
+    children: [
+      { path: 'css/ios', component: () => import('src/pages/css/component/ios.vue') }
+    ]
+  },
+  {
     path: '*',
     component: () => import('pages/Error404.vue')
   }
