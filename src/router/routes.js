@@ -1,24 +1,37 @@
-
 const routes = [
   {
-    path: '/',
-    component: () => import('layouts/MainLayout.vue'),
-    children: [
-      { path: '', component: () => import('pages/Index.vue') }
-    ]
+    path: "/home",
+    name: "home",
+    component: () => import("layouts/MainLayout.vue"),
+    mate: {
+      tabName: "首页",
+    },
+    children: [{ path: "", component: () => import("pages/Index.vue") }],
   },
   {
-    path: '/css',
-    name:"css",
-    component: () => import('src/pages/css/index.vue'),
+    path: "/css",
+    name: "css",
+    component: () => import("src/pages/css/index.vue"),
+    mate: {
+      tabName: "CSS案例",
+    },
     children: [
-      { path: 'css/ios', component: () => import('src/pages/css/component/ios.vue') }
-    ]
+      {
+        path: "ios",
+        name: "css/ios",
+        component: () => import("src/pages/css/component/ios.vue"),
+      },
+    ],
   },
   {
-    path: '*',
-    component: () => import('pages/Error404.vue')
-  }
-]
+    path: "/card",
+    name: "card",
+    component: () => import("src/pages/css/component/card.vue"),
+  },
+  {
+    path: "*",
+    component: () => import("pages/Error404.vue"),
+  },
+];
 
-export default routes
+export default routes;

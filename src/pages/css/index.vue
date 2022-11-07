@@ -1,12 +1,15 @@
 <template>
-    <div class="q-ma-md">
-      <q-btn @click="$router.push('ios')" label="IOS-switch"></q-btn>
+    <div>
+      <HeaderBar class="home-index"></HeaderBar>
+      <q-btn to="css/ios" label="IOS-switch" no-caps></q-btn>
     </div>
   </template>
   
   <script>
+  import HeaderBar from "src/components/header.vue"
   export default {
-    name: 'CssHome'
+    name: 'CssHome',
+    components:{HeaderBar}
   }
   </script>
   
