@@ -39,6 +39,11 @@ const routes = [
     component: () => import("src/pages/vueTest/search/index.vue"),
   },
   {
+    path: "/tabBar",
+    name: "tabBar",
+    component: () => import("src/pages/vueTest/tabBar/index.vue"),
+  },
+  {
     path: "*",
     component: () => import("pages/Error404.vue"),
   },
