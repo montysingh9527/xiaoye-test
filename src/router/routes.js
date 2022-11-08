@@ -34,6 +34,11 @@ const routes = [
     component: () => import("src/pages/vueTest/btnIndex/index.vue"),
   },
   {
+    path: "/search",
+    name: "search",
+    component: () => import("src/pages/vueTest/search/index.vue"),
+  },
+  {
     path: "*",
     component: () => import("pages/Error404.vue"),
   },
