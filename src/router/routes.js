@@ -29,6 +29,11 @@ const routes = [
     component: () => import("src/pages/css/component/card.vue"),
   },
   {
+    path: "/btnindex",
+    name: "btnindex",
+    component: () => import("src/pages/vueTest/btnIndex/index.vue"),
+  },
+  {
     path: "*",
     component: () => import("pages/Error404.vue"),
   },
