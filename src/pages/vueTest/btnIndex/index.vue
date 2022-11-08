@@ -1,7 +1,7 @@
+<!-- 按钮点击切换 -->
 <template>
-  <div>
+  <div @click="checkActive($event)">
     <Button-Index
-      @btnActive="BtnActive"
       v-for="(item, index) of subjects"
       :key="index"
       :items="item"
@@ -23,8 +23,16 @@ export default {
   },
   created() {},
   methods: {
-    BtnActive(idx) {
-      this.curinx = idx;
+    checkActive(event) {
+      // 获取当前点击的元素 。 保存当前className
+      const tar = event.target,
+        tarName = tar.className;
+      if (tarName == "btn-content") {
+        // 获取子元素data-index值
+        const idx = parseInt(tar.dataset.index);
+        this.curinx = idx;
+        console.log(idx);
+      }
     },
   },
 };

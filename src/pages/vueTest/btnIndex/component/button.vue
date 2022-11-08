@@ -1,7 +1,8 @@
+<!-- 子组件 -->
 <template>
   <button
-    @click="CheckActive(index)"
     :class="['btn-content', { current: curInx == index }]"
+    :data-index="index"
   >
     {{ items }}
   </button>
@@ -13,15 +14,6 @@ export default {
     items: String,
     index: Number,
     curInx: Number,
-  },
-  data() {
-    return {};
-  },
-  created() {},
-  methods: {
-    CheckActive(index) {
-      this.$emit("btnActive", index);
-    },
   },
 };
 </script>
