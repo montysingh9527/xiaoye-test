@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>图片预加载 (2)多个图片</title>
+  </head>
+  <body>
+    <div style="width: 400px; height: 700px; background-color: #ccc"></div>
+
+    <script type="text/javascript">
+      // 获取元素节点
+      var oDiv = document.getElementsByTagName("div")[0];
+      //  后端返回的 图片列表
+      var imgSrcArr = [
+        "https://fms.res.meizu.com/dms/2022/09/21/73bfc56b-5cc1-4729-9be6-afdae229e7ef.jpg",
+        "https://openfile.meizu.com/group1/M00/09/4D/Cgbj0WJCn1KAGWFwAAl0Ek5Xzdw958.png",
+        "https://openfile.meizu.com/group1/M00/09/C2/Cgbj0WL9s52AZ6XZAAJwnV6JIPc663.png",
+      ];
+      // 遍历图片添加src属性
+      imgSrcArr.forEach((elem) => {
+        // 创建src标签
+        var oImg = new Image();
+        // 将图片地址赋值给src
+        oImg.src = elem;
+        // 设置宽度
+        oImg.style.width = "100%";
+        // 当图片标签加载完成，添加到div中
+        oImg.onload = function () {
+          // div中添加img标签
+          oDiv.append(oImg);
+        };
+      });
+    </script>
+  </body>
+</html>

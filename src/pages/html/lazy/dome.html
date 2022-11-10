@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>图片预加载 (1)单个图片</title>
+  </head>
+  <body>
+    <div style="width: 400px; height: 700px; background-color: #ccc">
+      <img
+        class="list-img"
+        src="https://fms.res.meizu.com/dms/2021/03/23/42020dd8-33b8-4950-a6e9-9ca1e620a287.png"
+        alt=""
+        width="100%"
+      />
+    </div>
+
+    <script type="text/javascript">
+        // 获取元素节点
+        var oDiv = document.getElementsByTagName('div')[0];
+        // 通过构造函数生成 img标签
+        var oImg = new Image();
+        // img标签赋值
+        oImg.src = "https://fms.res.meizu.com/dms/2021/03/23/42020dd8-33b8-4950-a6e9-9ca1e620a287.png"
+        // 添加样式
+        oImg.style.width = "100%";
+        // 当img标签加载完毕onload事件
+        oImg.onload = function (){
+            // 将img标签添加到div中
+            oDiv.append(oImg);
+        }
+
+    </script>
+  </body>
+</html>

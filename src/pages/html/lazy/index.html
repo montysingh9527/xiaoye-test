@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>图片懒加载</title>
+    <style>
+      .list-img {
+        width: 300px;
+        height: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <ul class="img-list J-imgList"></ul>
+    </div>
+    <div id="J-data" style="display: none">
+        [{"img":"https://fms.res.meizu.com/dms/2021/03/23/42020dd8-33b8-4950-a6e9-9ca1e620a287.png","name":"图片1"},
+        {"img":"https://openfile.meizu.com/group1/M00/09/E5/Cgbj0WMqykyAJQOeAAf_c2bFmyE873.jpg","name":"图片2"},
+        {"img":"https://openfile.meizu.com/group1/M00/09/1C/Cgbj0WHMILuAa5VBAARrd6gpl38315.png","name":"图片3"},
+        {"img":"https://fms.res.meizu.com/dms/2022/09/21/73bfc56b-5cc1-4729-9be6-afdae229e7ef.jpg","name":"图片4"},
+        {"img":"https://openfile.meizu.com/group1/M00/09/C3/Cgbj0WL9tYKAK0YtAAKf4D5icow367.png","name":"图片5"},
+        {"img":"https://openfile.meizu.com/group1/M00/09/4D/Cgbj0WJCn1KAGWFwAAl0Ek5Xzdw958.png","name":"图片6"},
+        {"img":"https://openfile.meizu.com/group1/M00/09/C2/Cgbj0WL9s52AZ6XZAAJwnV6JIPc663.png","name":"图片7"},
+        {"img":"https://fms.res.meizu.com/dms/2021/03/23/42020dd8-33b8-4950-a6e9-9ca1e620a287.png","name":"图片8"},
+        {"img":"https://openfile.meizu.com/group1/M00/09/E5/Cgbj0WMqykyAJQOeAAf_c2bFmyE873.jpg","name":"图片9"},
+        {"img":"https://openfile.meizu.com/group1/M00/09/1C/Cgbj0WHMILuAa5VBAARrd6gpl38315.png","name":"图片10"},
+        {"img":"https://fms.res.meizu.com/dms/2022/09/21/73bfc56b-5cc1-4729-9be6-afdae229e7ef.jpg","name":"图片11"},
+        {"img":"https://openfile.meizu.com/group1/M00/09/C3/Cgbj0WL9tYKAK0YtAAKf4D5icow367.png","name":"图片12"},
+        {"img":"https://openfile.meizu.com/group1/M00/09/4D/Cgbj0WJCn1KAGWFwAAl0Ek5Xzdw958.png","name":"图片13"},
+        {"img":"https://openfile.meizu.com/group1/M00/09/C2/Cgbj0WL9s52AZ6XZAAJwnV6JIPc663.png","name":"图片14"}
+        ]
+    </div>
+    <script type="text/html" id="J-imgTpl">
+      <li class="img-item">
+        <div class="img-wrap">
+          <img
+            class="list-img"
+            src="https://gw.alicdn.com/imgextra/i4/O1CN01pF6oIt1hGXxYvrvlT_!!6000000004250-2-tps-1920-3000.png"
+            data-src="{{img}}"
+            alt="{{name}}"
+          />
+          <h3>{{name}}</h3>
+        </div>
+      </li>
+    </script>
+    <!-- 功能js -->
+    <script src="js/index.js"></script>
+  </body>
+</html>
