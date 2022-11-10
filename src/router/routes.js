@@ -44,6 +44,11 @@ const routes = [
     component: () => import("src/pages/vueTest/tabBar/index.vue"),
   },
   {
+    path: "/mixin",
+    name: "mixin",
+    component: () => import("src/pages/vueTest/mixinTest/index.vue"),
+  },
+  {
     path: "*",
     component: () => import("pages/Error404.vue"),
   },
