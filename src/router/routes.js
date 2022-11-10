@@ -49,6 +49,11 @@ const routes = [
     component: () => import("src/pages/vueTest/mixinTest/index.vue"),
   },
   {
+    path: "/filters",
+    name: "filters",
+    component: () => import("src/pages/vueTest/filters/index.vue"),
+  },
+  {
     path: "*",
     component: () => import("pages/Error404.vue"),
   },
