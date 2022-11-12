@@ -59,6 +59,11 @@ const routes = [
     component: () => import("src/pages/vueTest/stars/index.vue"),
   },
   {
+    path: "/directive",
+    name: "directive",
+    component: () => import("src/pages/vueTest/directive/index.vue"),
+  },
+  {
     path: "*",
     component: () => import("pages/Error404.vue"),
   },
