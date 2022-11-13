@@ -69,6 +69,11 @@ const routes = [
     component: () => import("src/pages/vueTest/counter/index.vue"),
   },
   {
+    path: "/calculator",
+    name: "calculator",
+    component: () => import("src/pages/vueTest/calculator/index.vue"),
+  },
+  {
     path: "*",
     component: () => import("pages/Error404.vue"),
   },
