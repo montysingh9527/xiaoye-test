@@ -7,7 +7,7 @@ import { PLUS, MINUS } from "src/pages/vueTest/counter/mixins/counter.js";
 
 
 export default (ctx) => {
-  // ctx就是this。 ctx.$data 是component的index.vue中data值result
+  // ctx就是this。 ctx.$data 是component的counter.vue中data值result
   const { plus, minus } = reducer(ctx.$data);
   return function (type, ...args) {
     switch (type) {
