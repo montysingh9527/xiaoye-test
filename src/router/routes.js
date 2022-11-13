@@ -64,6 +64,11 @@ const routes = [
     component: () => import("src/pages/vueTest/directive/index.vue"),
   },
   {
+    path: "/counter",
+    name: "counter",
+    component: () => import("src/pages/vueTest/counter/index.vue"),
+  },
+  {
     path: "*",
     component: () => import("pages/Error404.vue"),
   },
