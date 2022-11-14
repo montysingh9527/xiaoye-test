@@ -107,6 +107,14 @@ const routes = [
     component: () => import("src/pages/vueTest/calculator/index.vue"),
   },
   {
+    path: "/todolist",
+    name: "todolist",
+    mate:{
+      titlename:"派发器案例—TodoList"
+    },
+    component: () => import("src/pages/vueTest/todolist/index.vue"),
+  },
+  {
     path: "*",
     component: () => import("pages/Error404.vue"),
   },
