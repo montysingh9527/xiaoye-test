@@ -1,5 +1,9 @@
 const routes = [
   {
+    path: "/",
+    redirect: 'home', 
+  },
+  {
     path: "/home",
     name: "home",
     component: () => import("layouts/MainLayout.vue"),
@@ -113,6 +117,14 @@ const routes = [
       titlename:"派发器案例—TodoList"
     },
     component: () => import("src/pages/vueTest/todolist/index.vue"),
+  },
+  {
+    path: "/watch",
+    name: "watch",
+    mate:{
+      titlename:"watch监听"
+    },
+    component: () => import("src/pages/vueTest/watch/index.vue"),
   },
   {
     path: "*",
