@@ -1,26 +1,20 @@
 <template>
   <div class="q-ma-md q-gutter-md">
     <div>
-        <p>{{ serchFrom.name }}</p>
-        <p>{{ serchFrom.num }}</p>
-        <p>{{ serchFrom.page }}</p>
-        <button @click="setName">修改name</button>
-        <button @click="setAge">修改age</button>
-        <button @click="setPage">修改page</button>
+      <p>{{ serchFrom.name }}</p>
+      <p>{{ serchFrom.num }}</p>
+      <p>{{ serchFrom.page }}</p>
+      <button @click="setName">修改name</button>
+      <button @click="setAge">修改age</button>
+      <button @click="setPage">修改page</button>
     </div>
     <q-separator color="orange" />
-    <div class="q-mt-md">
-        空白区
-    </div>
-    <q-separator color="orange" />
-    <Watch />
+    <div class="q-mt-md">空白区</div>
   </div>
 </template>
 <script>
-import { watchObj } from "./mixins/watch.js";
-import Watch from "./component/watch.vue"
+import { watchParms } from "../mixins/watch.js";
 export default {
-  components:{ Watch },
   data() {
     return {
       serchFrom: {
@@ -31,12 +25,12 @@ export default {
     };
   },
   watch: {
-    ...watchObj({
+    ...watchParms({
       key: ["name", "page"],
-      val: "serchFrom",
-      cb: function () {
+      obj: "serchFrom",
+      cb(){
         this.init();
-      },
+      }
     }),
   },
   methods: {
