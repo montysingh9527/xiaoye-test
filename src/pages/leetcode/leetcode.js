@@ -124,4 +124,85 @@ function lengthOfLongestSubstring(s) {
   return maxLength;
 }
 
-console.log(lengthOfLongestSubstring("abcabcbb"));
+// console.log(lengthOfLongestSubstring("abcabcbb"));
+
+/**
+ * 找出needle出现在haystack中的初始索引
+ * const haystack = "hello", needle = "ll";   // 2
+ */
+function strStr(haystack, needle) {
+  if (needle === "" || needle === haystack) {
+    return 0;
+  }
+  if (haystack.length < needle.length) {
+    return -1;
+  }
+  for (let i = 0; i < haystack.length; i++) {
+    if (haystack.substring(i, i + needle.length) === needle) {
+      return i;
+    }
+  }
+  return -1;
+}
+// console.log(strStr("hello", "lo"))
+
+/**
+ * 第54题：螺旋矩阵 Spiral Matrix
+ * 示例1：
+ * [
+ *  [1, 2, 3],
+ *  [4, 5, 6],
+ *  [7, 8, 9]
+ * ]
+ * // 1输出： [1, 2, 3, 4, 5, 6,7, 8, 9]
+ */
+
+function spiralOrder(matrix) {
+  // 如果数组为空，返回空数组
+  if (matrix.length === 0) {
+    return [];
+  }
+  // 定义4个边界以及当前方向
+  let top = 0,
+    bottom = matrix.length - 1,
+    left = 0,
+    right = matrix[0].length - 1,
+    direction = "right",
+    result = [];
+  // 当左边界小于等于右边界，且上边界小于等于下边界时，执行while循环：按照右下左上的顺序，依次将路径上的字符添加到结果里
+  while (left <= right && top <= bottom) {
+    if (direction === "right") {
+      for (let i = left; i <= right; i++) {
+        result.push(matrix[top][i]);
+      }
+      top++;
+      direction = "down";
+    } else if (direction === "down") {
+      for (let i = top; i <= bottom; i++) {
+        result.push(matrix[i][right]);
+      }
+      right--;
+      direction = "left";
+    } else if (direction === "left") {
+      for (let i = right; i >= left; i--) {
+        result.push(matrix[bottom][i]);
+      }
+      bottom--;
+      direction = "top";
+    } else if (direction === "top") {
+      for (let i = bottom; i >= top; i--) {
+        result.push(matrix[i][left]);
+      }
+      left++;
+      direction = "right";
+    }
+  }
+  // 返回结果
+  return result;
+}
+console.log(spiralOrder([
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+  ])
+); // [1, 2, 3, 6, 9,8, 7, 4, 5]
