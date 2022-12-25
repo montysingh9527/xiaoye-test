@@ -206,3 +206,45 @@ console.log(spiralOrder([
     [7, 8, 9],
   ])
 ); // [1, 2, 3, 6, 9,8, 7, 4, 5]
+
+
+/**
+ * 第55题：跳跃游戏 jump game
+ * 输入：[2, 3, 1, 1, 4]
+ * 输出：true
+ * 解释：我们可以先跳1步，从位置0到达位置1，然后再从位置1跳3步到达最后一个位置
+ */
+// 解法1：贪心算法解题
+function canJump(nums) {
+    let maxJump = nums.length - 1;
+    // 从后往前遍历
+    for (let i = nums.length - 2; i >= 0; i--) {
+      if (i + nums[i] >= maxJump) {
+        maxJump = i;
+      }
+    }
+    return maxJump === 0;
+}
+console.log(canJump([3, 2, 1, 0, 4])); // false
+// 解法2
+function canJump2(nums) {
+    const totalLength = nums.length;
+    const memo = Array(totalLength).fill(0);
+    memo[totalLength - 1] = 1;
+    // 从后往前遍历
+    for (let i = totalLength - 2; i >= 0; i--) {
+        const maxJump = Math.min(i + nums[i], totalLength - 1);
+        for (let j = i + 1; j < maxJump; j++) {
+        if (memo[j] === 1) {
+            memo[i] = 1;
+            break;
+        }
+        }
+    }
+    if (memo[0] === 1) {
+        return true;
+    } else {
+        return false;
+    }
+}
+console.log(canJump2([3, 2, 1, 0, 4]));  // false
