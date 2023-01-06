@@ -127,6 +127,14 @@ const routes = [
     component: () => import("src/pages/vueTest/watch/index.vue"),
   },
   {
+    path: "/magnifier",
+    name: "magnifier",
+    mate:{
+      titlename:"magnifier放大镜特效（自定义指令实现）"
+    },
+    component: () => import("src/pages/vueTest/magnifier/index.vue"),
+  },
+  {
     path: "*",
     component: () => import("pages/Error404.vue"),
   },
